@@ -24,3 +24,16 @@ end
 
 fireclickdetector(d1, 1000)
 fireclickdetector(d2, 1000)
+
+local plr = game.Players.LocalPlayer
+
+while wait() do
+    fireproximityprompt(game:GetService("Workspace").Map.Jobs.InAndOut.FrieWork.ProximityAttachment.ProximityPrompt, 100)
+    local Service = game:GetService("TweenService")
+    local Info = TweenInfo.new()
+    local Player = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local Anim = {CFrame = game:GetService("Workspace").Map.Jobs.InAndOut.Takeout.CFrame} 
+    
+    local Tween = Service:Create(Player,Info,Anim)
+    Tween:Play()
+end
