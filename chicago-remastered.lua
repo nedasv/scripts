@@ -8,3 +8,19 @@ while wait(.1) do
     if not _G.farm then break end
     fireproximityprompt(prox, 100)
 end
+
+-- needs to bypass tp
+
+local plr = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+local d1 = game:GetService("Workspace").Map.Jobs.Bodega.Pickup.Boxes.ClickDetector
+local d2 = game:GetService("Workspace").Map.Jobs.Bodega.DropOff.Supply.ClickDetector
+
+_G.farm = true
+
+while wait(10) do
+    if not _G.farm then break end
+    plr.CFrame = d1.Parent.CFrame + Vector3.new(0, 0, 20)
+end
+
+fireclickdetector(d1, 1000)
+fireclickdetector(d2, 1000)
